@@ -29,9 +29,43 @@ public class Main {
     {
         values[j] = scanner.nextInt();
     }
-    discount = values[0];
-    offset = values[1];
-    readLenth = values[2];
+    scanner.close();
+
+    // Проверка offset
+    if (values[1] > 0) {
+        offset = values[1];
+    }
+    else {
+        System.out.println("Введите положительный offset");
+        Scanner scannerOffset = new Scanner(System.in);
+        offset = scannerOffset.nextInt();
+        scannerOffset.close();
+    }
+    // Проверка discount
+    if (values[0] >= 1) & (values[0] <= 99) {
+            discount = values[0];
+        }
+    else {
+            System.out.println("Введите discount от 1 до 99");
+            Scanner scannerDiscount = new Scanner(System.in);
+            discount = scannerDiscount.nextInt();
+            scannerDiscount.close();
+        }
+    // Проверка ReadLength
+    if (values[2] > 0) & (values[2] <= price.length) {
+            readLenth = values[2];
+        }
+    else {
+            System.out.println("Введите readLength положительным и в пределах массива");
+            Scanner scannerReadLength = new Scanner(System.in);
+            discount = scannerReadLength.nextInt();
+            scannerReadLength.close();
+        }
+
+
+    //discount = values[0];
+    //offset = values[1];
+    //readLenth = values[2];
 
 
 
