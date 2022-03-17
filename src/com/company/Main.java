@@ -29,7 +29,7 @@ public class Main {
     {
         values[j] = scanner.nextInt();
     }
-    scanner.close();
+    //scanner.close();
 
     // Проверка offset
     if (values[1] > 0) {
@@ -58,14 +58,19 @@ public class Main {
     else {
             System.out.println("Введите readLength положительным и в пределах массива");
             Scanner scannerReadLength = new Scanner(System.in);
-            readLenth = scannerReadLength.nextInt();
-            scannerReadLength.close();
+            if (scannerReadLength.hasNextInt())
+                 readLenth = scannerReadLength.nextInt();
+            else
+                readLenth = 0;
+            //scannerReadLength.close();
         }
 
 
     //discount = values[0];
     //offset = values[1];
     //readLenth = values[2];
+
+        scanner.close();
 
 
 
